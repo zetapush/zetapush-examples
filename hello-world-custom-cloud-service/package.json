@@ -1,18 +1,14 @@
 {
-  "name": "hello-world-custom-cloud-service",
-  "version": "1.0.0",
-  "main": "worker/index.js",
-  "scripts": {
-    "deploy": "zeta push ."
-  },
-  "dependencies": {
-    "@zetapush/cli": "^0.10.2",
-    "@zetapush/core": "^0.10.2",
-    "@zetapush/platform": "^0.10.2"
-  },
-  "zetapush": {
-    "sandboxId": "<appname>",
-    "login": "<developerlogin>",
-    "password": "<developerpassword>"
-  }
+    "name": "hello-world",
+    "version": "0.0.1",
+    "main": "server/index.js",
+    "private": true,
+    "scripts": {
+        "deploy": "zeta push",
+        "register": "zeta register",
+        "start": "zeta run"
+    },
+    "dependencies": {
+        "@zetapush/cli": "^0.15.2"
+    }
 }
