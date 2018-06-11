@@ -1,0 +1,15 @@
+{
+  "name": "@zetapush/filesystem",
+  "main": "worker/index.js",
+  "private": true,
+  "scripts": {
+    "deploy": "zeta push",
+    "register": "zeta register",
+    "start": "zeta run",
+    "troubleshoot": "zeta troubleshoot"
+  },
+  "dependencies": {
+    "@zetapush/cli": "*",
+    "@zetapush/platform": "*"
+  }
+}
