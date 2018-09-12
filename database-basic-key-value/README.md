@@ -1,4 +1,6 @@
-# ZetaPush Celtia Example
+# What will be built
+
+![Screenshot](./result.png)
 
 ## Goal of this sample: Show how to store objects indexed by keys
 
@@ -41,6 +43,8 @@ show how to use Gda.range() method to make search on partial key.
 
 **NOTE**: This sample could be written differently for better performance for
 lists that contain many many items. But this is not the aim of this sample.
+
+# How to use it
 
 ## Installation
 
