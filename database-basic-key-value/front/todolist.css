@@ -1,0 +1,103 @@
+#app {
+}
+
+.add-list {
+  margin: 2em auto;
+  width: 250px;
+}
+
+.todolists {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.todolist {
+  display: flex;
+  width: 300px;
+  border: 1px solid #ccc;
+  background: #fafafa;
+  margin: 1.5em;
+  padding: 0.75em;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.todolist .add-item {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+.todolist .add-item button {
+  margin: auto;
+}
+.todolist .add-item input,
+.todolist .add-item button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.todolist ul {
+  display: flex;
+  margin-top: 0.5em;
+  flex-direction: column;
+}
+
+.todolist ul li {
+  position: relative;
+  padding-right: 30px;
+}
+.todolist ul li button {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  z-index: 100;
+}
+
+.add-list .control.has-icons-right .icon {
+  pointer-events: all;
+}
+
+button {
+  font-size: 0 !important;
+  white-space: nowrap !important;
+  color: transparent !important;
+  width: 24px;
+  height: 24px;
+}
+button::before {
+  font-weight: bolder;
+  color: white;
+  display: inline-block;
+  font-size: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+
+button.is-small {
+  width: 20px;
+  height: 20px;
+}
+button.is-small::before {
+  font-size: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+button.add::before {
+  content: '+';
+}
+
+button.mark-done::before {
+  content: '\f058';
+  font-family: 'Font Awesome 5 Free';
+}
+
+.done {
+  text-decoration: line-through;
+  color: #aaa;
+  font-style: italic;
+}
+.done .mark-done {
+  visibility: hidden;
+}

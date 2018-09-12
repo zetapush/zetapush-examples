@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII="
+    rel="icon" type="image/x-icon" />
+  <title>database-basic-key-value sample</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <link href="./todolist.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="add-list">
+      <div class="field">
+        <p class="control has-icons-left has-icons-right">
+          <input class="input is-info" v-model="todolistName" placeholder="new todo list name">
+          <span class="icon is-small is-left">
+            <i class="fas fa-list-ul"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <button class="add button is-link is-rounded is-small" @click="addTodoList">new TODO list</button>
+          </span>
+        </p>
+      </div>
+    </div>
+    <div class="todolists">
+      <section v-for="todolist in todolists" class="todolist">
+        <h2><span class="icon is-small is-left"><i class="fas fa-list-ul"></i></span> {{ todolist.name }}</h2>
+        <div class="add-item">
+          <input class="input is-primary is-small" v-bind:id="todolist.id + '-title'" placeholder="what to do ?">
+          <input class="input is-primary is-small" v-bind:id="todolist.id + '-desc'" placeholder="more information">
+          <button class="add button is-primary is-rounded is-small" @click="addTodoItem(todolist.id)">add TODO item to the
+            list
+          </button>
+        </div>
+        <ul>
+          <li v-for="todoitem in todoitems[todolist.id]" v-bind:class="{ done: todoitem.done }">
+            <h3>{{ todoitem.title }}</h3>
+            <p>{{ todoitem.description }}</p>
+            <button class="button mark-done is-success is-rounded is-small" @click="markDone(todoitem.id)">done</button>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/@zetapush/client"></script>
+  <script src="https://unpkg.com/@zetapush/platform"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
