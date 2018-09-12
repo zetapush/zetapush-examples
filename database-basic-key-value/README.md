@@ -1,25 +1,59 @@
 # ZetaPush Celtia Example
 
+## Goal of this sample: Show how to store objects indexed by keys
+
+The sample will provide an API to store and load data for a TODO list.
+Each TODO list may have several TODO items.
+
+Each TODO items have the following format:
+
+```
+{
+  id: string;
+  title: string;
+  description?: string;
+  creationDate: Date;
+  done: boolean;
+  doneDate?: Date;
+}
+```
+
+Each TODO list has the following format:
+
+```
+{
+  id: string;
+  name: string;
+}
+```
+
+## Use of ZetaPush Gda database service
+
+Each TODO item is stored in a Gda table and indexed by the generated identifier of the item.
+That Gda table is named 'todoitems'.
+
+Another table is used to store TODO list data and also store association between a TODO list and the TODO items.
+The Gda table for association is named 'todolists'.
+The association table uses the TODO list generated id as key.
+
+**NOTE**: This sample is voluntary more complex that it could be. The sample doesn't
+show how to use Gda.range() method to make search on partial key.
+
+**NOTE**: This sample could be written differently for better performance for
+lists that contain many many items. But this is not the aim of this sample.
+
 ## Installation
 
 ```console
 npm install
 ```
 
-## Deployment
-
-Push your code on ZetaPush platform
-
-```console
-npm run deploy
-```
-
-## Development
+## Run the sample
 
 Run your code on your local platform
 
 ```console
-npm run start
+npm run start -- --serve-front
 ```
 
 ## Project structure
@@ -27,69 +61,14 @@ npm run start
 ```console
 .
 └──
-  ├── public
+  ├── front
+  │  ├── todolist.css
   │  ├── index.html
   │  └── index.js
-  ├── server
-  │  └── index.js (api implementation)
+  ├── worker
+  │  ├── constants.ts
+  │  ├── model.ts
+  │  ├── utils.ts
+  │  └── index.js (exposed api implementation)
   └── package.json
-```
-
-## How it works?
-
-> Server side
-
-Your server api in a plain old class defining your interface.
-
-Example:
-
-```js
-module.exports = class Api {
-  hello() {
-    return `Hello World from JavaScript ${Date.now()}`;
-  }
-}
-```
-
-This code expose an API called **hello** which returns a string "Hello World from JavaScript" concatened with server timestamp.
-
-You can use injected platform services with to following.
-
-> Dependency injection use [injection-js](https://github.com/mgechev/injection-js)
-
-```js
-const { Inject, Stack } = require('@zetapush/platform');
-
-module.exports = class Api {
-  static get parameters() {
-    return [
-      new Inject(Stack)
-    ];
-  }
-  constructor(stack) {
-    this.stack = stack;
-  }
-  push(item) {
-    return this.stack.push({ stack: 'list', data: item });
-  }
-  list() {
-    return this.stack.push({ stack: 'list' });
-  }
-}
-```
-
-To consume an API in your front-end application you have to create a **mapped** method.
-
-> Client side
-
-#### Register your API mapping class
-
-```js
-const api = client.createProxyTaskService();
-```
-
-#### Invoke your remote API method
-
-```js
-const message = await api.hello();
 ```
