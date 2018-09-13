@@ -27,11 +27,10 @@ npm run start
 ```console
 .
 └──
-  ├── public
-  │  ├── index.html
-  │  └── index.js
-  ├── server
-  │  └── index.js (api implementation)
+  ├── src
+  │  └── // Ionic application
+  ├── worker
+  │  └── // Api implementation
   └── package.json
 ```
 
@@ -58,17 +57,11 @@ You can use injected platform services with to following.
 > Dependency injection use [injection-js](https://github.com/mgechev/injection-js)
 
 ```js
-const { Inject, Stack } = require('@zetapush/platform');
+import { Injectable } = from '@zetapush/core';
+import { Stack } = from '@zetapush/platform-legacy';
 
-module.exports = class Api {
-  static get parameters() {
-    return [
-      new Inject(Stack)
-    ];
-  }
-  constructor(stack) {
-    this.stack = stack;
-  }
+export default class Api {
+  constructor(private stack: Stack) {}
   push(item) {
     return this.stack.push({ stack: 'list', data: item });
   }
