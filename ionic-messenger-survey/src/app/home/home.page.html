@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Votre profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Choisissez votre avatar</ion-label>
+  </ion-item>
+  <ion-item>
+    <app-ui-uploadable (files)="onUserSelectFiles($event)" [src]="avatarUrl"></app-ui-uploadable>
+  </ion-item>
+</ion-content>
