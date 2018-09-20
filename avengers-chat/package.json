@@ -1,10 +1,10 @@
 {
-  "name": "@zetapush/filesystem",
+  "name": "avengers-chat",
+  "version": "0.1.0",
   "main": "worker/index.ts",
   "private": true,
   "scripts": {
     "deploy": "zeta push",
-    "register": "zeta register",
     "start": "zeta run"
   },
   "dependencies": {

@@ -1,5 +1,7 @@
-client = new ZetaPushClient.SmartClient({});
-api = client.createProxyTaskService();
+client = new ZetaPushClient.SmartClient();
+api = client.createProxyTaskService({
+  namespace: 'user'
+});
 
 const messageNode = document.getElementById('message');
 const messageTitle = document.getElementById('message-title');

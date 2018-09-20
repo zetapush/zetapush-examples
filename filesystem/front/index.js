@@ -1,22 +1,6 @@
-const getAppName = () => {
-  const PATTERN = /^#\/sandbox\/(.+)/;
-  const [hash, appName] = PATTERN.exec(location.hash) || [];
-  if (appName) {
-    return appName;
-  } else {
-    location.href = `#/sandbox/${prompt('sandbox')}`;
-    location.reload();
-  }
-};
-
 // Create new ZetaPush Client
-const client = new ZetaPush.WeakClient({
-  appName: document.documentElement.dataset.zpSandboxid || getAppName(),
-  platformUrl: 'http://hq.zpush.io:9080/zbo/pub/business',
-});
-
+const client = new ZetaPushClient.WeakClient();
 const api = client.createProxyTaskService();
-
 const upload = ({ file, guid, httpMethod, url }) => {
   return fetch(url, {
     method: httpMethod,

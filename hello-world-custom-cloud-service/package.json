@@ -1,14 +1,18 @@
 {
-    "name": "hello-world",
-    "version": "0.0.1",
-    "main": "server/index.js",
-    "private": true,
-    "scripts": {
-        "deploy": "zeta push",
-        "register": "zeta register",
-        "start": "zeta run"
-    },
-    "dependencies": {
-        "@zetapush/cli": "^0.15.2"
-    }
+  "name": "hello-world-custom-cloud-service",
+  "version": "0.1.0",
+  "main": "worker/index.ts",
+  "private": true,
+  "scripts": {
+    "deploy": "zeta push",
+    "start": "zeta run",
+    "troubleshoot": "zeta troubleshoot"
+  },
+  "dependencies": {
+    "@types/node": "10.10.1",
+    "@zetapush/cli": "0.33.4",
+    "@zetapush/core": "0.33.4",
+    "@zetapush/platform-legacy": "0.33.4",
+    "typescript": "3.0.3"
+  }
 }

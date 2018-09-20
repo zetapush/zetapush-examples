@@ -1,29 +1,17 @@
-const { Stack, Messaging, GroupManagement, Inject } = require('@zetapush/platform');
+import { Injectable, Context } from '@zetapush/core';
+import { Stack, Messaging, Groups } from '@zetapush/platform-legacy';
 
 const CONVERSATION_ID = 'avengersChat';
 const CHANNEL_MESSAGING = 'avengersChannel';
 
-class AvengersApi {
-  /**
-   * Dependencies injection of cloud services
-   */
-  static get parameters() {
-    return [
-      new Inject(Stack),
-      new Inject(Messaging),
-      new Inject(GroupManagement)
-    ]
-  }
-
-  /**
-   * Constructor of our API
-   */
-  constructor(stack, messaging, groups) {
-    this.stack = stack;
-    this.messaging = messaging;
-    this.groups = groups;
-  }
-
+@Injectable()
+export default class AvengersApi {
+  private requestContext!: Context;
+  constructor(
+    private stack: Stack,
+    private messaging: Messaging,
+    private groups: Groups
+  ) {}
   /**
    * Create the conversation of the chat, if doesn't already exists
    */
@@ -37,18 +25,16 @@ class AvengersApi {
       });
     }
   }
-
   /**
    * Add the current user in the conversation
    */
-  async addMeToConversation(parameters, context) {
+  async addMeToConversation() {
     const output = await this.groups.addUser({
       group: CONVERSATION_ID,
-      user: context.owner
+      user: this.requestContext.owner
     });
     return output;
   }
-
   /**
    * Send a message on the chat
    * @param {Object} message
@@ -58,7 +44,7 @@ class AvengersApi {
     const group = await this.groups.groupUsers({
       group: CONVERSATION_ID
     });
-    const users = group.users;
+    const users = group.users || [];
 
     // Send the message to each user in the conversation
     this.messaging.send({
@@ -75,7 +61,6 @@ class AvengersApi {
 
     return group;
   }
-
   /**
    * Get all messages in the conversation
    */
@@ -86,5 +71,3 @@ class AvengersApi {
     return result;
   }
 }
-
-module.exports = AvengersApi;
