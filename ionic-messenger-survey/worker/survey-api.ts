@@ -82,6 +82,6 @@ export class SurveyApi {
       data: {
         survey: this.survey
       }
-    }).catch(() => {});
+    });
   }
 }

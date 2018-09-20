@@ -66,6 +66,6 @@ export class MessengerApi {
       channel: 'onAddConversationMessage',
       target,
       data: { message }
-    }).catch(() => {});
+    });
   }
 }

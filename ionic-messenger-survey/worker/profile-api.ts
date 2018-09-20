@@ -79,6 +79,6 @@ export class ProfileApi {
         userKey: this.requestContext.owner,
         file
       }
-    }).catch(() => {});
+    });
   }
 }
