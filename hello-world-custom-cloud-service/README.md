@@ -1,140 +1,89 @@
-# ZetaPush Celtia 
+# ZetaPush Celtia Example
 
-## What is it ?
-
-ZetaPush Celtia helps you to create your applications more quickly and more cost-effective.
-You can use the _cloud services_ (users management, messaging, ...) provided by ZetaPush and create your own _custom cloud services_ for your business logic.
-
-The documentation is available [here](https://zetapush.github.io/documentation) and you can see and contribute on our open specifications on [GitHub](https://github.com/zetapush/zetapush-next-open-specification).
-
-
-## Getting started
-
-### 1. Create an application
-
-First, you need to create a ZetaPush Celtia application. For this you can use : 
-
-`npm init @zetapush myApp`
-
-> More informations in the [documentation](https://zetapush.github.io/documentation/#_init)
-
-or launch this command to get the _Hello World_ example :
+## Installation
 
 ```console
-$ wget https://github.com/zetapush/zetapush-examples/archive/master.zip; 
-  unzip master.zip -d ./all;
-  rm master.zip; 
-  mv all/zetapush-examples-master/hello-world-custom-cloud-service .; 
-  rm -r all
+npm install
 ```
 
-### 2. Run worker in local
+## Deployment
 
-_**Worker :** Your back code, with your custom cloud services (Business logic)_
+Push your code on ZetaPush platform
 
-You can run your worker in local to test your application and make changes :
-
-`zeta run`
-
-> A temporary account will be created.
-> More informations in the [documentation](https://zetapush.github.io/documentation/#_run)
-
-
-### 3. Deploy your code
-
-Once your application is ready, you can deploy it :
-
-`zeta push`
-
-Your application will be deployed and an URL will be returned to use your application.
-
-> A temporary account will be created.
-> More informations in the [documentation](https://zetapush.github.io/documentation/#_deploy)
-
-## Create an application from scratch
-
-**Necessary files :**
-
+```console
+npm run deploy
 ```
+
+## Development
+
+Run your code on your local platform
+
+```console
+npm run start
+```
+
+## Project structure
+
+```console
 .
-├── .zetarc
-├── .gitignore
-├── front
-│   ├── index.html
-│   └── index.js
-├── worker
-│   └── index.js
-└── package.json
+└──
+  ├── public
+  │  ├── index.html
+  │  └── index.js
+  ├── worker
+  │  └── index.ts (api implementation)
+  └── package.json
 ```
 
-**.zetarc** :
+## How it works?
 
-```json
-{
-  "developerLogin" : "user@gmail.com",
-  "developerPassword" : "password"
-}
-```
+> Server side
 
-**.gitignore :**
+Your server api in a plain old class defining your interface.
 
-> Optional but avoid to expose your credentials
+Example:
 
-```bash
-.zetarc
-```
-
-**front :**
-
-Your front code is in this folder. ([Documentation](https://zetapush.github.io/documentation/#_custom_cloud_service_2))
-
-**worker :**
-
-Your back code is in this folder. ([Documentation](https://zetapush.github.io/documentation/#_services))
-
-**package.json :**
-
-```json
-{
-  "name": "myApp",
-  "main": "worker/index.js",
-  "version": "0.0.1",
-  "dependencies": {
-  },
-  "zetapush": {
-      "front": "./front",
-      "worker": "./worker"
+```js
+export default class Api {
+  hello() {
+    return `Hello World from Worker ${Date.now()}`;
   }
 }
 ```
 
-The `main` property is the entry point of your worker (All the _custom cloud services_).
+This code expose an API called **hello** which returns a string "Hello World from Worker" concatened with server timestamp.
 
-The properties `zetapush/front` and `zetapush/worker` specify the path of the front and back code.
+You can use injected platform services with to following.
 
-**Dependencies :**
+> Dependency injection use [injection-js](https://github.com/mgechev/injection-js)
 
-You need to install this following dependencies :
-- `@zetapush/core`
-- `@zetapush/platform` 
+```js
+const { Injectable } = require('@zetapush/core');
+const { Stack } = require('@zetapush/platform-legacy');
 
-```bash
-$ npm install --save @zetapush/core @zetapush/platform
+export default class Api {
+  constructor(private stack: Stack) {}
+  push(item) {
+    return this.stack.push({ stack: 'list', data: item });
+  }
+  list() {
+    return this.stack.push({ stack: 'list' });
+  }
+}
 ```
 
-Finally, you can install the _CLI_ because you will need it to deploy or run your code in local :
+To consume an API in your front-end application you have to create a **mapped** method.
 
-```bash
-$ npm install -g @zetapush/cli
+> Client side
+
+#### Register your API mapping class
+
+```js
+const api = client.createProxyTaskService();
 ```
 
-After having create necessary files and install dependencies your application is ready and you can use the CLI to run your worker in local or push your code on the ZetaPush platform. 
+#### Invoke your remote API method
 
-
-## Create ZetaPush account
-
-You can create a ZetaPush account using the CLI :
-
-`zeta register --developer-login user@gmail.com`
-
-- **--developer-login** : Email for your account
+```js
+const message = await api.hello();
+```

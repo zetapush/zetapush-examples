@@ -1,3 +1,7 @@
-# Uncomment the following line to avoid to publish your credentials on GitHub
-.zetarc
+# Vendor
 /node_modules/
+# ZetaPush Config
+.zetarc
+# TypeScript Generated Files
+/worker/**/*.js
+/worker/**/*.d.ts
