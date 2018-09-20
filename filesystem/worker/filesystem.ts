@@ -19,9 +19,9 @@ export class Filesystem {
       guid, metadata, tags
     });
   }
-  list({ folder = '/', page } = {}) {
+  list({ folder = '/' } = {}) {
     return this.fs.ls({
-      folder, page
+      folder
     });
   }
 }

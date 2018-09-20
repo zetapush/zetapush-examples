@@ -1,5 +1,5 @@
 // Create new ZetaPush Client
-const client = new ZetaPush.WeakClient();
+const client = new ZetaPushClient.WeakClient();
 const api = client.createProxyTaskService();
 const upload = ({ file, guid, httpMethod, url }) => {
   return fetch(url, {
