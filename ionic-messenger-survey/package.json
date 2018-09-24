@@ -6,7 +6,7 @@
   "main": "./worker/index.ts",
   "scripts": {
     "ng": "ng",
-    "prestart": "npm run ng build",
+    "build": "npm run ng build",
     "start": "zeta run -vvv"
   },
   "private": true,
@@ -30,7 +30,8 @@
     "ng2-charts": "^1.6.0",
     "rxjs": "6.2.2",
     "rxjs-compat": "^6.3.2",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "typescript": "^2.9.0"
   },
   "devDependencies": {
     "@angular/cli": "~6.1.1",
@@ -56,8 +57,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "^2.9.0"
+    "tslint": "~5.11.0"
   },
   "description": "An Ionic project"
 }
