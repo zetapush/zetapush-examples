@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" rel="icon" type="image/x-icon" />
+  <link href="./index.css" rel="stylesheet" />
+  <title>Getting started with ZetaPush</title>
+</head>
+
+<body>
+  <header>
+    <img src="./logo.png" alt="Logo"/>
+    <h1>Welcome to ZetaPush</h1>
+  </header>
+  <main>
+    <p>The login is always 'user' and his email to validate the account is 'user@yopmail.com'</p>
+    <nav>
+      <label>Password : </label>
+      <input id="password" type="text" placeholder="Password for signup / connexion">
+      <button class="js-SignUp">Signup</button>
+      <button class="js-Connect">Connect</button>
+      <hr>
+      <label>Current password :</label>
+      <input id="currentPassword" type="text" placeholder="Current password">
+      <label>New password : </label>
+      <input id="newPassword" type="text" placeholder="New password">
+      <button class="js-ChangePassword">Change password</button>
+      <hr>
+      <button class="js-Disconnect">Disconnect</button>
+    </nav>
+  </main>
+  <script src="https://unpkg.com/@zetapush/client"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>
