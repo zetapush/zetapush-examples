@@ -9,10 +9,10 @@
     "troubleshoot": "zeta troubleshoot"
   },
   "dependencies": {
-    "typescript": "3.0.1",
     "@types/node": "10.9.4",
+    "@zetapush/cli": "*",
     "@zetapush/core": "*",
     "@zetapush/user-management": "*",
-    "@zetapush/cli": "*"
+    "typescript": "3.0.1"
   }
 }
