@@ -3,7 +3,7 @@ import { StandardUserManagementModule, StandardUserWorkflow, ConfirmationUrlHttp
 import { Simple, Gda, GdaConfigurer, GdaDataType, Idempotence } from '@zetapush/platform-legacy';
 
 @Injectable()
-class MyUserStorage implements UserRepository, Bootstrappable {
+class MyUserStorage implements UserRepository, Bootstrappable { // <1>
   private NAME_TABLE_STORAGE_USERS = 'tableStorageUsers';
   private NAME_COLUMN_STORAGE_USERS = 'columnStorageUsers';
 
@@ -15,7 +15,7 @@ class MyUserStorage implements UserRepository, Bootstrappable {
   /**
    * Create the table to store the informations of the users
    */
-  async onApplicationBootstrap() {
+  async onApplicationBootstrap() { // <2>
     try {
       await this.gdaConfigurer.createTable({
         name: this.NAME_TABLE_STORAGE_USERS,
@@ -188,7 +188,7 @@ class MyUserStorage implements UserRepository, Bootstrappable {
     http: ConfirmationUrlHttpHandler
   },
   providers: [
-    {
+    { // <3>
       provide: UserRepositoryInjectable,
       useClass: MyUserStorage
     }
