@@ -84,3 +84,7 @@ Basic application to have an application with user management (creation, confirm
 ### ionic-message-survey
 
 Ionic application that use ZetaPush Celtia to create a survey and send messages through users.
+
+### MyBuzzNight
+
+Angular application that allows you to create an event, invite friends, and share photos in real-time.
