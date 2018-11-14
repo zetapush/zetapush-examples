@@ -1,0 +1,35 @@
+ion-item {
+  margin-bottom: 0.65em;
+}
+ion-label {
+  background-color: #f1f0f0;
+  color: rgba(0, 0, 0, 1);
+  margin: 1px 0;
+  padding: 6px 12px;
+  border-top-left-radius: 1.3em;
+  border-top-right-radius: 1.3em;
+  border-bottom-left-radius: 0em;
+  border-bottom-right-radius: 1.3em;
+  white-space: normal;
+}
+ion-label.mine {
+  background-color: #0084ff;
+  color: #fff;
+  margin: 1px 0;
+  padding: 6px 12px;
+  border-top-left-radius: 1.3em;
+  border-top-right-radius: 1.3em;
+  border-bottom-left-radius: 1.3em;
+  border-bottom-right-radius: 0em;
+}
+ion-footer {
+  border-top: 2px solid rgba(0, 0, 0, .10);
+  padding: 12px 12px 3px 12px;
+}
+textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+}

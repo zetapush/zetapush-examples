@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Espace de discussion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list appScrollGlue>
+    <ion-item *ngFor="let item of messages">
+      <ion-avatar [slot]="item.view.slot">
+        <img [src]="getAvatar(item.message.author) | async">
+      </ion-avatar>
+      <ion-label [ngClass]="{'mine': item.view.mine}">
+        <div>{{item.message.text}}</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer no-border>
+  <textarea placeholder="Écrivez un message..." (keypress)="onKeyPress($event)" [(ngModel)]="message"></textarea>
+</ion-footer>
