@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0",
+  "main": "index.ts",
+  "private": true,
+  "scripts": {
+    "deploy": "zeta push",
+    "start": "zeta run",
+    "troubleshoot": "zeta troubleshoot"
+  },
+  "dependencies": {
+    "@types/node": "10.12.2",
+    "@zetapush/cli": "0.36.0-alpha.34b80503",
+    "@zetapush/core": "0.36.0-alpha.34b80503",
+    "typescript": "3.1.6"
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "multi-workers",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "deploy": "time zeta push",
+        "start": "zeta run",
+        "troubleshoot": "zeta troubleshoot"
+    },
+    "dependencies": {
+        "@types/node": "10.12.2",
+        "@zetapush/cli": "0.36.0-alpha.34b80503",
+        "@zetapush/core": "0.36.0-alpha.34b80503",
+        "typescript": "3.1.6"
+    },
+    "workers": {
+        "myWorker1": "./worker1",
+        "myWorker2": "./worker2"
+    },
+    "fronts": {
+        "myFront1": "./front1",
+        "myFront2": "./front2"
+    }
+}

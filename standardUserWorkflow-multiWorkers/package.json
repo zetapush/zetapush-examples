@@ -1,0 +1,26 @@
+{
+  "name": "StandardUserWorkflowMultiWorkers",
+  "version": "0.1.0",
+  "main": "worker/index.ts",
+  "private": true,
+  "scripts": {
+    "deploy": "zeta push",
+    "start": "zeta run",
+    "troubleshoot": "zeta troubleshoot"
+  },
+  "dependencies": {
+    "@types/node": "10.12.8",
+    "@zetapush/cli": "0.36.0-alpha.8563bc5c",
+    "@zetapush/core": "0.36.0-alpha.8563bc5c",
+    "@zetapush/platform-legacy": "0.36.0-alpha.8563bc5c",
+    "typescript": "3.1.6"
+  },
+  "workers": {
+    "worker-client": "./worker-client",
+    "worker-admin": "./worker-admin"
+  },
+  "fronts": {
+    "front-client": "./front-client",
+    "front-admin": "./front-admin"
+  }
+}
