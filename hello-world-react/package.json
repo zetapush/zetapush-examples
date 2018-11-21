@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@zetapush/cli": "^0.35.5",
+    "@zetapush/client": "^0.35.5",
     "@zetapush/core": "^0.35.5",
     "@zetapush/platform-legacy": "^0.35.5",
     "react": "^16.6.3",
