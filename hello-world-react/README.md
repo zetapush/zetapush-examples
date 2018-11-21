@@ -27,9 +27,10 @@ npm run start
 ```console
 .
 └──
-  ├── public
-  │  ├── index.html
-  │  └── index.js
+  ├── src (react application)
+  │  ├── src
+  │  ├── public
+  │  ├── package.json
   ├── worker
   │  └── index.ts (api implementation)
   └── package.json
