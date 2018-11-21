@@ -7,17 +7,18 @@ import { WeakClient } from '@zetapush/client';
 
 class App extends Component {
 
-  constructor(client, api) {
-    super(client, api)
+  constructor() {
+    super()
+    this.onClick = this.onClick.bind(this);
 
-    client = new WeakClient({
+    this.client = new WeakClient({
       platformUrl: 'https://celtia.zetapush.com/zbo/pub/business',
       appName: '2s6dq7oo1'
     });
-    api = client.createProxyTaskService();
-    client.connect().then(() =>
-      document.body.classList.add('connected')
-    );
+    this.api = this.client.createProxyTaskService();
+    this.client.connect().then(() => {
+      document.getElementById('main').classList.add('connected')
+    });
   }
 
   async onClick() {
@@ -26,29 +27,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={reactLogo} className="App-logo" alt="reactLogo" />
-          <img src={zetapushLogo} className="App-logo" alt="zetapushLogo" />
-          <h1>Welcome to ZetaPush with React</h1>
-
+      <div id="main">
+        <header>
+          <img className="ui-Logo" src={zetapushLogo} alt="zetapushLogo"/>
+          <img className="App-logo" src={reactLogo} alt="reactLogo"/>
+          <h1>Welcome to ZetaPush</h1>
+        </header>
+        <main>
           <h2>To get started, edit worker/index.ts and save to reload.</h2>
           <nav>
-            <button class="js-Hello" onClick={this.onClick}>call hello()</button>
+          <button className="js-Hello" onClick={this.onClick}>call hello()</button>
           </nav>
-
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        </main>
       </div>
     );
   }
