@@ -1,32 +1,22 @@
 {
-  "name": "hello-world-react",
-  "main": "worker/index.ts",
+  "name": "worker",
   "version": "0.1.0",
+  "main": "worker/index.ts",
   "private": true,
-  "dependencies": {
-    "@zetapush/client": "^0.35.5",
-    "@zetapush/core": "^0.35.5",
-    "@zetapush/platform-legacy": "^0.35.5",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-scripts": "2.1.1"
-  },
   "scripts": {
-    "deploy": "cd worker && npm run deploy",
-    "start": "cd worker && npm run start",
-    "troubleshoot": "cd worker && npm run troubleshoot",
-    "serve": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "deploy": "zeta push",
+    "start": "zeta run",
+    "troubleshoot": "zeta troubleshoot",
+    "serve": "cd src && npm run start",
+    "build": "cd src && npm run build",
+    "test": "cd src && npm run test",
+    "eject": "cd src && npm run eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "dependencies": {
+    "@types/node": "10.12.9",
+    "@zetapush/cli": "0.35.5",
+    "@zetapush/core": "0.35.5",
+    "@zetapush/platform-legacy": "0.35.5",
+    "typescript": "3.1.6"
+  }
 }

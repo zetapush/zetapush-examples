@@ -1,44 +1,89 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ZetaPush Celtia Example
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+```console
+npm install
+```
 
-### `npm start`
+## Deployment
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Push your code on ZetaPush platform
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```console
+npm run deploy
+```
 
-### `npm test`
+## Development
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run your code on your local platform
 
-### `npm run build`
+```console
+npm run start
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project structure
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```console
+.
+└──
+  ├── public
+  │  ├── index.html
+  │  └── index.js
+  ├── worker
+  │  └── index.ts (api implementation)
+  └── package.json
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How it works?
 
-### `npm run eject`
+> Server side
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Your server api in a plain old class defining your interface.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Example:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```js
+export default class Api {
+  hello() {
+    return `Hello World from Worker ${Date.now()}`;
+  }
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This code expose an API called **hello** which returns a string "Hello World from Worker" concatened with server timestamp.
 
-## Learn More
+You can use injected platform services with to following.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> Dependency injection use [injection-js](https://github.com/mgechev/injection-js)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```js
+const { Injectable } = require('@zetapush/core');
+const { Stack } = require('@zetapush/platform-legacy');
+
+export default class Api {
+  constructor(private stack: Stack) {}
+  push(item) {
+    return this.stack.push({ stack: 'list', data: item });
+  }
+  list() {
+    return this.stack.push({ stack: 'list' });
+  }
+}
+```
+
+To consume an API in your front-end application you have to create a **mapped** method.
+
+> Client side
+
+#### Register your API mapping class
+
+```js
+const api = client.createProxyTaskService();
+```
+
+#### Invoke your remote API method
+
+```js
+const message = await api.hello();
+```
