@@ -4,6 +4,13 @@
 
 ```console
 npm install
+cd src && npm install
+```
+
+## React build
+
+```console
+npm run build && ln -sf src/build front
 ```
 
 ## Deployment

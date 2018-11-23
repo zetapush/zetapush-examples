@@ -31,7 +31,7 @@ class App extends Component {
         <header>
           <img className="ui-Logo" src={zetapushLogo} alt="zetapushLogo"/>
           <img className="App-logo" src={reactLogo} alt="reactLogo"/>
-          <h1>Welcome to ZetaPush</h1>
+          <h1>Welcome to ZetaPush with React</h1>
         </header>
         <main>
           <h2>To get started, edit worker/index.ts and save to reload.</h2>

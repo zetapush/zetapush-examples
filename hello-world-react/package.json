@@ -8,7 +8,7 @@
     "start": "zeta run",
     "troubleshoot": "zeta troubleshoot",
     "serve": "cd src && npm run start",
-    "build": "cd src && npm run build",
+    "build": "(cd src && npm run build)",
     "test": "cd src && npm run test",
     "eject": "cd src && npm run eject"
   },
