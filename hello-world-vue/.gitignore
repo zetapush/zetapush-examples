@@ -5,6 +5,7 @@
 # TypeScript Generated Files
 /worker/**/*.js
 /worker/**/*.d.ts
+front/*
 
 .DS_Store
 node_modules

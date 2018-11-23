@@ -8,51 +8,39 @@
     <main>
       <h2>To get started, edit worker/index.ts and save to reload.</h2>
       <nav>
-        <button :click="onClick">call hello()</button>
+        <button v-on:click="onClick()">call hello()</button>
       </nav>
     </main>
-    <button :click="onClick">call hello()</button>
   </div>
 </template>
 
 <script>
+import { WeakClient } from '@zetapush/client';
 
-  // import { WeakClient } from '@zetapush/client';
-
-  // const client = new WeakClient({
-  //   platformUrl: 'https://celtia.zetapush.com/zbo/pub/business',
-  //   appName: 'a9i002ef',
-  // });
-  // const api = client.createProxyTaskService();
-
-  // client.connect().then(() => {
-  //   console.log('mdr');
-  //   document.getElementById('main').classList.add('connected')
-  // });
-
-  // var mdr = 'lol';
-
-  export default {
-    name: 'HelloWorld',
-    data: () => {
-      return {
-        mdr: 'lol'
-      };
-    },
-    methods: {
-      onClick: async function() {
-        console.log(await api.hello());
-      }
-    },
-    created: function () {
-      console.log(this.mdr);
+export default {
+  name: 'HelloWorld',
+  methods: {
+    onClick: async function() {
+      console.log(await this.api.hello());
     }
+  },
+  created: function () {
+    this.client = new WeakClient({
+      platformUrl: 'https://celtia.zetapush.com/zbo/pub/business',
+      appName: 'a9i002ef',
+    });
+    this.api = this.client.createProxyTaskService();
+
+    this.client.connect().then(() => {
+      document.getElementById('main').classList.add('connected')
+    });
   }
+}
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 header {
   background-color: #222;
   height: 15rem;
@@ -97,5 +85,35 @@ button, label {
   cursor: pointer;
   box-sizing: border-box;
   align-items: flex-start;
+}
+#main {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100%;
+}
+#main::before {
+  display: block;
+  content: "Open Your Console";
+  background: #000;
+  color: #FFF;
+  position: fixed;
+  transform: rotate(45deg) translate(60px, 0px);
+  right: 0;
+  top: 0;
+  height: 2rem;
+  padding: 5px 30px;
+  line-height: 25px;
+  font-family: Calibri, Helvetica, Arial;
+  font-weight: bold;
+  text-align: center;
+}
+#main:not(.connected) * {
+  opacity: 0.85;
+  pointer-events: none;
+  cursor: not-allowed;
+  color: graytext;
+}
+#main.connected .ui-Logo {
+  animation: zoom 2s infinite;
 }
 </style>
