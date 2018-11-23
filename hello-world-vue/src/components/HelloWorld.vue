@@ -1,8 +1,8 @@
 <template>
   <div id="main">
     <header>
-      <img class="ui-Logo" src="@/assets/vueLogo.png">
       <img class="ui-Logo" src="@/assets/zetapushLogo.png">
+      <img class="ui-Logo" src="@/assets/vueLogo.png">
       <h1>Welcome to ZetaPush with Vue.js</h1>
     </header>
     <main>
@@ -50,7 +50,7 @@ header {
   flex-direction: column;
 }
 img {
-  margin: auto;
+  padding: 0 40px;
   max-height: 75%;
 }
 h1, h2 {

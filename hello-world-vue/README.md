@@ -34,8 +34,7 @@ npm run start
 .
 └──
   ├── public (Vue.js public folder)
-  │  ├── index.html
-  │  └── index.js
+  │  └── index.html
   ├── src (Vue.js application)
   │  ├── components
   │  │	└── HelloWorld.vue
