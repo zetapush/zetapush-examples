@@ -6,6 +6,12 @@
 npm install
 ```
 
+## Vue.js build
+
+```console
+npm run build -- --dest front
+```
+
 ## Deployment
 
 Push your code on ZetaPush platform
@@ -27,9 +33,15 @@ npm run start
 ```console
 .
 └──
-  ├── public
+  ├── public (Vue.js public folder)
   │  ├── index.html
   │  └── index.js
+  ├── src (Vue.js application)
+  │  ├── components
+  │  │	└── HelloWorld.vue
+  │  ├── assets
+  │  ├── App.vue
+  │  └── main.js
   ├── worker
   │  └── index.ts (api implementation)
   └── package.json
