@@ -21,6 +21,10 @@ Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with
 
 Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [React](https://reactjs.org/).
 
+### hello-world-angular
+
+Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [Angular](https://angular.io/).
+
 ---
 
 ## Some examples
