@@ -9,7 +9,7 @@ npm install
 ## Angular build
 
 ```console
-npm run build --prod
+npm run build -- --prod
 ```
 
 ## Deployment
