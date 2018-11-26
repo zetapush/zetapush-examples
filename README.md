@@ -13,6 +13,14 @@ This is because this examples are also used in our [documentation](https://doc.z
 
 Basic application to display _"Hello World"_ using a _Custom Cloud Service_.
 
+### hello-world-vue
+
+Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [Vue.js](https://vuejs.org/).
+
+### hello-world-react
+
+Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [React](https://reactjs.org/).
+
 ---
 
 ## Some examples
