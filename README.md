@@ -2,7 +2,7 @@
 
 In this repository we have many examples of ZetaPush. Each folder is an application with a specific use case.
 
-_In each example you can see some "tag" like : `// <1>`. 
+_In each example you can see some "tag" like : `// <1>`.
 This is because this examples are also used in our [documentation](https://doc.zetapush.com).
 
 ---
@@ -84,10 +84,6 @@ Example of extension of the **StandardUserWorkflow** to change the generation of
 ---
 
 ## Applications
-
-### avengersChat
-
-A basic application that allow you to use a _Avengers_ personage and chat with other.
 
 ### standard-user-workflow
 
