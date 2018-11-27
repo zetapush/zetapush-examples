@@ -2,6 +2,8 @@
 
 In this repository we have many examples of ZetaPush. Each folder is an application with a specific use case.
 
+You can find some more important projects/demonstrations on this [github organization](https://github.com/zetapush-demo).
+
 _In each example you can see some "tag" like : `// <1>`.
 This is because this examples are also used in our [documentation](https://doc.zetapush.com).
 
