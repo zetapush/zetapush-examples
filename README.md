@@ -88,7 +88,3 @@ Example of extension of the **StandardUserWorkflow** to change the generation of
 ### standard-user-workflow
 
 Basic application to have an application with user management (creation, confirmation, login)
-
-### ionic-message-survey
-
-Ionic application that use ZetaPush Celtia to create a survey and send messages through users.
