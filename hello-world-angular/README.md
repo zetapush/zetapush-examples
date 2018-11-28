@@ -33,11 +33,10 @@ npm run start
 ```console
 .
 └──
-  ├── public
-  │  ├── index.html
-  │  └── index.js
+  ├── src (Angular application)
   ├── worker
   │  └── index.ts (api implementation)
+  ├── angular.json
   └── package.json
 ```
 
