@@ -1,5 +1,5 @@
 {
-  "name": "changeAccountCreation",
+  "name": "change-token-storage",
   "version": "0.1.0",
   "main": "worker/index.ts",
   "private": true,

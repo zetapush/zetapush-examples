@@ -1,5 +1,5 @@
 {
-  "name": "changeUuidGeneration",
+  "name": "change-message-confirmation-sender",
   "version": "0.1.0",
   "main": "worker/index.ts",
   "private": true,
