@@ -9,23 +9,17 @@ This is because this examples are also used in our [documentation](https://doc.z
 
 ---
 
-## Getting started examples
+## `hello-world`
 
-### hello-world-custom-cloud-service
+Basic application to display _"Hello World"_ using a _Custom Cloud Service_
 
-Basic application to display _"Hello World"_ using a _Custom Cloud Service_.
+* `hello-world-vanillajs` without framework.
 
-### hello-world-vue
+* `hello-world-vue` with [Vue.js](https://vuejs.org/).
 
-Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [Vue.js](https://vuejs.org/).
+* `hello-world-react` with [React](https://reactjs.org/).
 
-### hello-world-react
-
-Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [React](https://reactjs.org/).
-
-### hello-world-angular
-
-Basic application to display _"Hello World"_ using a _Custom Cloud Service_ with [Angular](https://angular.io/).
+* `hello-world-angular` with [Angular](https://angular.io/).
 
 ---
 
