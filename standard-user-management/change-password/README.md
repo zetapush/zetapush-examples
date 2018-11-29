@@ -1,4 +1,4 @@
-# Change password example
+# change-password
 
 > The user used in this example has a login 'user' and his email is 'user@yopmail.com' (used for the confirmation)
 

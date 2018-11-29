@@ -1,4 +1,4 @@
-# Handler HTTP requests
+# custom-http-server
 
 ## How to use it ?
 

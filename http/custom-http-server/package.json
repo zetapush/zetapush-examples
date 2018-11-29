@@ -1,5 +1,5 @@
 {
-  "name": "readApplicationJson",
+  "name": "custom-http-server",
   "version": "0.1.0",
   "main": "worker/index.ts",
   "private": true,
@@ -9,10 +9,11 @@
     "troubleshoot": "zeta troubleshoot"
   },
   "dependencies": {
-    "@types/node": "10.11.4",
+    "@types/node": "^10.11.6",
     "@zetapush/cli": "*",
     "@zetapush/core": "*",
     "@zetapush/platform-legacy": "*",
-    "typescript": "3.1.1"
+    "express": "^4.16.3",
+    "typescript": "3.1.2"
   }
 }

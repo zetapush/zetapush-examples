@@ -23,27 +23,27 @@ Basic application to display _"Hello World"_ using a _Custom Cloud Service_
 
 ---
 
-## Some examples
+## `properties-configuration`
 
-### readApplicationJson
+* `custom-properties-in-applicationjson` Explain how to read the _application.json_ file from the worker
 
-Explain how to read the _application.json_ file from the worker
+---
 
-### filesystem
+## `http`
 
-Show how to use the file system cloud service.
+* `custom-http-server` Example to explain how to launch a HTTP server in your worker.
 
-### handlerHttpRequests
+---
 
-Example to explain how to launch a HTTP server in your worker.
+## `filesystem`
 
-### changePassword
+* Show how to use the file system cloud service.
 
-Example of code to change the password of a user using the legacy cloud services.
+---
 
-### database-basic-key-value
+## `database`
 
-A basic example of storage using key-value method.
+* `database-basic-key-value` A basic example of storage using key-value method.
 
 ---
 
@@ -62,6 +62,8 @@ Example of extension of the **StandardUserWorkflow** to ...
 * `change-user-storage` ... change the storage of the user informations.
 
 * `change-uuid-generation` ... change the generation of the UUID used to identify a user.
+
+* `change-password` ... change the password of a user using the legacy cloud services.
 
 ---
 
