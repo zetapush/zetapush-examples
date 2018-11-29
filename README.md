@@ -47,35 +47,21 @@ A basic example of storage using key-value method.
 
 ---
 
-## Standard User Management
+## `standard-user-management`
 
-### changeAccountCreation
+Example of extension of the **StandardUserWorkflow** to ...
 
-Example of extension of the **StandardUserWorkflow** to change the behavior of the account creation.
+* `changeAccountCreation` ... change the behavior of the account creation.
 
-### changeAccountCreation
+* `changeGenerationToken` ... change the generation of the token used for the account confirmation process.
 
-Example of extension of the **StandardUserWorkflow** to change the behavior of the account creation.
+* `changeMessageConfirmationSender` ... change the method to send the message of the account confirmation (use SMS for example, displayed in the console for this example).
 
-### changeGenerationToken
+* `changeTokenStorage` ... change how the token used for the account confirmation is stored.
 
-Example of extension of the **StandardUserWorkflow** to change the generation of the token used for the account confirmation process.
+* `changeUserStorage` ... change the storage of the user informations.
 
-### changeMessageConfirmationSender
-
-Example of extension of the **StandardUserWorkflow** to change the method to send the message of the account confirmation (use SMS for example, displayed in the console for this example).
-
-### changeTokenStorage
-
-Example of extension of the **StandardUserWorkflow** to change how the token used for the account confirmation is stored.
-
-### changeUserStorage
-
-Example of extension of the **StandardUserWorkflow** to change the storage of the user informations.
-
-### changeUuidGeneration
-
-Example of extension of the **StandardUserWorkflow** to change the generation of the UUID used to identify a user.
+* `changeUuidGeneration` ... change the generation of the UUID used to identify a user.
 
 ---
 
