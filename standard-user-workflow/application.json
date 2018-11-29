@@ -10,8 +10,16 @@
       "email": {
         "subject": "Please confirm your account registration"
       },
-      "success-url": "localhost:3000/#login",
-      "failure-url": "localhost:3000/#confirmation-failed"
+      "success-url": "http://localhost:3000#login",
+      "failure-url": "http://localhost:3000#confirmation-failed"
+    }
+  },
+  "reset-password": {
+    "ask": {
+      "base-url": "http://localhost:3000",
+      "email": {
+        "subject": "Please choose a new password"
+      }
     }
   },
   "mailjet": {
