@@ -10,7 +10,7 @@ cd src && npm install
 ## React build
 
 ```console
-npm run build && ln -sf src/build front
+npm run build
 ```
 
 ## Deployment
@@ -18,7 +18,7 @@ npm run build && ln -sf src/build front
 Push your code on ZetaPush platform
 
 ```console
-npm run deploy
+npm run deploy -- --front src/build
 ```
 
 ## Development
@@ -26,7 +26,7 @@ npm run deploy
 Run your code on your local platform
 
 ```console
-npm run start
+npm run start -- --front src/build
 ```
 
 ## Project structure

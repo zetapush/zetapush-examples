@@ -11,10 +11,7 @@ class App extends Component {
     super()
     this.onClick = this.onClick.bind(this);
 
-    this.client = new WeakClient({
-      platformUrl: 'https://celtia.zetapush.com/zbo/pub/business',
-      appName: '2s6dq7oo1'
-    });
+    this.client = new WeakClient();
     this.api = this.client.createProxyTaskService();
     this.client.connect().then(() => {
       document.getElementById('main').classList.add('connected')
