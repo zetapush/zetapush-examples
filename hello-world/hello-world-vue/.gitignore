@@ -1,4 +1,5 @@
 # Vendor
+package-lock.json
 /node_modules/
 # ZetaPush Config
 .zetarc

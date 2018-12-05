@@ -25,10 +25,7 @@ export default {
     }
   },
   created: function () {
-    this.client = new WeakClient({
-      platformUrl: 'https://celtia.zetapush.com/zbo/pub/business',
-      appName: 'a9i002ef',
-    });
+    this.client = new WeakClient();
     this.api = this.client.createProxyTaskService();
 
     this.client.connect().then(() => {

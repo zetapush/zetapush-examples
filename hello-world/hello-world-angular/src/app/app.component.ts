@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { WeakClient, ProxyService } from '@zetapush/client';
+import { WeakClient, ProxyTaskService } from '@zetapush/client';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import { WeakClient, ProxyService } from '@zetapush/client';
 export class AppComponent implements OnInit {
 
   client: WeakClient;
-  api: ProxyService;
+  api: ProxyTaskService;
 
   async onClick() {
     console.log(await this.api.hello());
@@ -18,8 +18,7 @@ export class AppComponent implements OnInit {
 
   async ngOnInit() {
     this.client = new WeakClient({
-      appName: 'y3kmm74lq',
-      platformUrl: 'https://celtia.zetapush.com/zbo/pub/business'
+      appName: 'willBeInject'
     });
     this.api = this.client.createProxyTaskService();
     this.client.connect().then(() =>
