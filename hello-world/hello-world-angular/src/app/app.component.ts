@@ -17,9 +17,7 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
-    this.client = new WeakClient({
-      appName: 'willBeInject'
-    });
+    this.client = new WeakClient();
     this.api = this.client.createProxyTaskService();
     this.client.connect().then(() =>
       document.getElementById('main').classList.add('connected')
