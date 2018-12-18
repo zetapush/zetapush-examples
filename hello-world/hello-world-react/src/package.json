@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@zetapush/client": "*",
-    "@zetapush/core": "*",
-    "@zetapush/platform-legacy": "*",
+    "@zetapush/client": "^0.37.4",
+    "@zetapush/core": "^0.37.4",
+    "@zetapush/platform-legacy": "^0.37.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
