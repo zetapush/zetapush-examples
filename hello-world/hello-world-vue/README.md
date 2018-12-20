@@ -1,5 +1,9 @@
 # ZetaPush Celtia Example
 
+## Katacoda
+
+You don't want to install anything ? Try it on [Katacoda](https://katacoda.com/zetapush/scenarios/hello-world-vue) !
+
 ## Installation
 
 ```console
