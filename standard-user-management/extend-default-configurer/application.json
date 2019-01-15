@@ -1,0 +1,29 @@
+{
+  "organization": {
+    "name": "ZetaPush"
+  },
+  "email": {
+    "from": "celtia@zetapush.com"
+  },
+  "registration": {
+    "confirmation": {
+      "email": {
+        "subject": "Please confirm your account registration"
+      },
+      "success-url": "#login",
+      "failure-url": "#confirmation-failed"
+    }
+  },
+  "reset-password": {
+    "ask": {
+      "url": "#ask-reset-password/${token}",
+      "email": {
+        "subject": "Please choose a new password"
+      }
+    }
+  },
+  "mailjet": {
+    "apikey-public": "",
+    "apikey-private": ""
+  }
+}

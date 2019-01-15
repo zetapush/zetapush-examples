@@ -65,6 +65,9 @@ Example of extension of the **StandardUserWorkflow** to ...
 
 * `change-password` ... change the password of a user using the legacy cloud services.
 
+* `extend-default-configurer` ... change the default template via a configurer.
+
+
 ---
 
 ## Applications
